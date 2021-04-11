@@ -9,5 +9,10 @@
 ///
 /// The DocTree can be consumed by a `DocGenerator` to produce
 /// documentation comments.
-#[allow(unused)]
 pub struct DocTree;
+
+impl From<syn::File> for DocTree {
+    fn from(_file: syn::File) -> Self {
+        todo!("https://github.com/nordzilla/cargo-doc-gen/issues/4")
+    }
+}
