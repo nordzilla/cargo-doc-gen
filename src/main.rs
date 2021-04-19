@@ -21,13 +21,13 @@ fn main() {
         .and_then(|value| value.parse().ok())
         .unwrap_or_else(num_cpus::get);
 
-    let run = if args.is_present("check") {
+    let try_run = if args.is_present("check") {
         try_validate
     } else {
         try_generate
     };
 
-    if let Err(e) = run(max_threads) {
+    if let Err(e) = try_run(max_threads) {
         eprintln!("{}", e);
         std::process::exit(1);
     }
