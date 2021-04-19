@@ -13,13 +13,13 @@ pub fn parse<'a>() -> ArgMatches<'a> {
             Arg::with_name("check")
                 .short("c")
                 .long("check")
-                .help("Validate existing documentation"),
+                .help("Validates existing documentation"),
         )
         .arg(
             Arg::with_name("threads")
                 .short("t")
                 .long("threads")
-                .help("Maximum number of threads to use")
+                .help("Sets the maximum number of threads to use")
                 .takes_value(true)
                 .validator(|s| {
                     s.parse::<usize>()
