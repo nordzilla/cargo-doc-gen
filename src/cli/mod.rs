@@ -7,7 +7,6 @@ use clap::{App, Arg, ArgMatches};
 pub fn parse<'a>() -> ArgMatches<'a> {
     let app = App::new(clap::crate_name!())
         .version(clap::crate_version!())
-        .author(clap::crate_authors!(", "))
         .about(clap::crate_description!())
         .arg(
             Arg::with_name("check")
